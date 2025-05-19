@@ -1,40 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+## ALX Listing App.
+<p>This project involves building an Airbnb clone, a web application that allows users to list, search, and book accommodations. The app replicates core Airbnb features such as user authentication, property listings, booking management, and reviews. The goal is to gain hands-on experience with full-stack development, including frontend, backend, and database integration.</p>
 
-## Getting Started
+### Folder Structure
 
-First, run the development server:
+- **components/**  
+    Contains reusable React components such as buttons, forms, modals, and listing cards. Each component is typically organized in its own folder with related styles and tests.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **constants/**  
+    Stores static values and configuration data used throughout the app, such as API endpoints, route names, and enumerations.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **interfaces/**  
+    Defines TypeScript interfaces and types for data models (e.g., User, Listing, Booking), ensuring type safety and consistency across the codebase.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **public/assets/**  
+    Holds static files like images, icons, and fonts that are publicly accessible. These assets are used for branding, UI elements, and content display.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+This structure helps maintain code organization, scalability, and ease of maintenance.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To run the project locally, follow these steps:
 
-## Learn More
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/yusufweb/alx-listing-app.git
+    cd alx-listing-app
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
+    or, if you use Yarn:
+    ```bash
+    yarn install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+3. **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+    or, with Yarn:
+    ```bash
+    yarn dev
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Open your browser and visit:**
+    ```
+    http://localhost:3000
+    ```
+    The app should now be running locally.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+> **Note:** Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
