@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* Custom utility to hide scrollbar */
+@layer utilities {
+  .scrollbar-hide {
+    /* For Firefox */
+    scrollbar-width: none;
+  }
+  /* For Chrome, Safari, Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
