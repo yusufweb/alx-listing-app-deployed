@@ -1,12 +1,16 @@
 import React from "react";
 import Card from "@/components/common/Card";
-import { PROPERTYLISTINGSAMPLE } from "@/constants";
+import { PropertyProps } from "@/interfaces";
 
-const Listing: React.FC = () => (
+interface PropertyListingsProps {
+  properties: PropertyProps[]; // The list of properties to display (already filtered)
+}
+
+const Listing: React.FC<PropertyListingsProps> = ({ properties }) => (
   <section className="p-8 grid lg:grid-cols-4 md:grid-cols-2 gap-6 ">
-    {PROPERTYLISTINGSAMPLE.map((list, index) => (
+    {properties.map((list) => (
       <Card
-        key={index}
+        key={list.name}
         name={list.name}
         address={list.address}
         rating={list.rating}

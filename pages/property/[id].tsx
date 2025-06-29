@@ -1,12 +1,24 @@
-import React from 'react';
+import React from "react";
+import { PROPERTYLISTINGSAMPLE } from "@/constants";
+import { useRouter } from "next/router";
+import PropertyDetail from "@/components/property/PropertyDetail";
+import {PropertyProps} from '@/interfaces'
 
 const PropertyPage: React.FC = () => {
-    return (
-        <div>
-            <h1>Property Details</h1>
-            {/* Add more property details here */}
-        </div>
-    );
+  const router = useRouter();
+  const { id } = router.query;
+
+  const property = PROPERTYLISTINGSAMPLE.find((item) => item.name === id);
+
+  if (!property) return <p>Property not found</p>;
+
+  return (
+    <div>
+      <PropertyDetail property={property} />
+    </div>
+  );
 };
 
 export default PropertyPage;
+
+

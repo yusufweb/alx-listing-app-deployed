@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
       {/* Content Overlay */}
       <div className="relative z-10 text-white p-4 bg-opacity-30 rounded-lg">
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
-          Find your favorite place here!
+          Find your favorite <br />place here!
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl font-medium">
           The best prices for over 2 million properties worldwide.

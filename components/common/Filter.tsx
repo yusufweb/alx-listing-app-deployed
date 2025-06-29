@@ -1,21 +1,26 @@
 import React from "react";
 import Button from "./Button";
 import Image from "next/image";
+import { FilterButtonsProps } from "@/interfaces";
+import { ALL_CATEGORIES } from "@/constants";
 
-const Filter: React.FC = () => {
+const Filter: React.FC<FilterButtonsProps> = ({
+  activeFilter,
+  onFilterChange,
+}) => {
   return (
     <section className="flex justify-between gap-4 px-8 bg-white rounded-lg mt-8">
       <div className="flex items-center justify-between gap-2">
-        <Button size="medium" shape="rounded-full" children="All" />
-        <Button size="medium" shape="rounded-full" children="Top Villa" />
-        <Button size="medium" shape="rounded-full" children="Free Reshedule" />
-        <Button
-          size="medium"
-          shape="rounded-full"
-          children="Book Now, Pay Later"
-        />
-        <Button size="medium" shape="rounded-full" children="Self Check in" />
-        <Button size="medium" shape="rounded-full" children="Instant Booking" />
+        {ALL_CATEGORIES.map((category) => (
+          <Button
+            size="medium"
+            shape="rounded-full"
+            key={category}
+            onClick={() => onFilterChange(category)}
+          >
+            {category}
+          </Button>
+        ))}
       </div>
       <div className="flex items-center justify-between gap-4">
         <Button size="medium" shape="rounded-full">
@@ -29,7 +34,7 @@ const Filter: React.FC = () => {
             />
           </div>
         </Button>
-         <Button size="medium" shape="rounded-full">
+        <Button size="medium" shape="rounded-full">
           <div className="flex justify-center items-center gap-4">
             <p>Sort by:</p>
             <p className="text-gray-400">Highest Price</p>

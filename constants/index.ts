@@ -1,4 +1,5 @@
 import { PropertyProps } from "../interfaces/index";
+import { ReviewsProps } from "../interfaces/index";
 // constant declaration - (Airbnb listing data)
 export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
   {
@@ -363,7 +364,48 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
   },
 ];
 
+export const ALL_CATEGORIES: string[] = [
+  "All",
+  "Self Checkin",
+  "Mountains View",
+  "Luxury Villa",
+  "Pool",
+  "Fireplace",
+  "Desert View",
+//   "Free breakfast",
+//   "Pet-Friendly",
+//   "Ocean View",
+];
+
 export const BACKGROUND_IMAGE = {
   heroBackgroundDesktop: "/assets/images/Hero/hero-desktop.png",
   heroBackgroundMobile: "/assets/images/Hero/hero-mobile.png",
 };
+
+export const REVIEWS: ReviewsProps[] = [
+  {
+    name: "Kerry",
+    rating: 4.5,
+    image: "/assets/images/Details/User 1.png",
+    review: "Although the wait time at this dentist’s office was longer than anticipated, the exceptional quality of care more than compensated for it. The staff exhibited friendliness, expertise, and ensured my comfort throughout the entire visit."
+  },
+  {
+    name: "Danel James",
+    rating: 5,
+    image: "/assets/images/Details/User 2.png",
+    review: "I was hesitant to invest in a herb garden until I saw this one, and it exceeded my expectations! It came with an easy-to-do guide, and the instructions helped me set it up in a few hours. The customer support was available 24/7 and addressed any questions I had."
+  },
+  {
+    name: "Matt",
+    rating: 4.8,
+    image: "/assets/images/Details/User 3.png",
+    review: "I have been taking these probiotic supplements for the past few weeks, and I’ve seen a significant improvement in my gut health. I appreciate the transparent labeling. Recommend it! "
+  },
+  {
+    name: "John & Jane",
+    rating: 5,
+    image: "/assets/images/Details/User 4.png",
+    review: "We had an incredible dining experience here. The staff was attentive, and the service was top-notch! The highlight was the cozy couches on the side where we could lounge and dine with our families! Worth a visit!"
+  }
+]
+

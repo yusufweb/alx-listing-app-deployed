@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   const sizeClasses: Record<ButtonSize, string> = {
     small: 'px-3 py-1.5 text-sm',
     medium: 'px-4 py-2 text-[13.5px]',
-    large: 'px-6 py-3 text-lg',
+    large: 'px-7 py-3 text-lg',
   };
 
   // Define Tailwind classes based on shape prop
@@ -26,8 +26,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   // Combine base styles with size, shape, and any custom classes
-  const combinedClasses = `
-    bg-transparent text-[#222222] font-semibold border border-gray-400
+  const combinedClasses = `text-[#222222] font-semibold border border-gray-400
     hover:bg-emerald-100 hover:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-50
     transition-colors duration-200
     ${sizeClasses[size]}

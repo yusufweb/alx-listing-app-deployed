@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Pill from "./Pill";
 import { PropertyProps } from "@/interfaces";
+import { useRouter } from "next/navigation";
 
 const Card: React.FC<PropertyProps> = ({
   name,
@@ -13,8 +14,15 @@ const Card: React.FC<PropertyProps> = ({
   image,
   discount,
 }) => {
+
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push(`/property/${name}`)
+  }
+
   return (
-    <div className="h-auto w-full cursor-pointer hover:shadow-md hover:rounded-lg mb-2 pb-4">
+    <div className="h-auto w-full cursor-pointer hover:shadow-md hover:rounded-lg mb-2 pb-4" onClick={handleClick}>
       <Image
         className="rounded-lg w-full object-contain"
         src={`${image}`}
@@ -43,17 +51,17 @@ const Card: React.FC<PropertyProps> = ({
       </div>
 
       <div className="flex justify-between mt-4 px-2">
-        <div className=" grid grid-cols-3 border border-gray-300 w-[125px] rounded-full px-2">
+        <div className=" grid grid-cols-3 border border-gray-300 w-[132px] rounded-full px-2">
           <div className="flex items-center">
-            <Image src="/assets/icons/bed 1.png" alt="star" width={10} height={10} />
+            <Image src="/assets/icons/bed 1.png" alt="star" width={11} height={11} />
             <p className="ml-1 text-[11px] font-medium">{offers.bed}</p>
           </div>
           <div className="flex items-center">
-            <Image src="/assets/icons/bathtub 1.png" alt="star" width={10} height={10} />
+            <Image src="/assets/icons/bathtub 1.png" alt="star" width={11} height={11} />
             <p className="ml-1 text-[11px] font-medium">{offers.shower}</p>
           </div>
           <div className="flex items-center">
-            <Image src="/assets/icons/people 1.png" alt="star" width={10} height={10} />
+            <Image src="/assets/icons/people 1.png" alt="star" width={11} height={11} />
             <p className="ml-1 text-[11px] font-medium">{offers.occupants}</p>
           </div>
         </div>

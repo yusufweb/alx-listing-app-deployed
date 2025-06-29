@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import Button from "../common/Button";
 
 const Header: React.FC = () => {
   return (
@@ -29,7 +31,9 @@ const Header: React.FC = () => {
 
         <div className="bg-white p-4 md:p-6 md:px-10 flex lg:flex-row items-center justify-between">
           <div className="hidden md:block md:mr-6 font-bold flex-shrink-0">
-            <Image src="/assets/logos/alx logo.png" width={70} height={70} alt="alx logo"/>
+            <Link href="/">
+              <Image src="/assets/logos/alx logo.png" width={70} height={70} alt="alx logo"/>
+            </Link>
           </div>
 
           <div
@@ -156,12 +160,8 @@ const Header: React.FC = () => {
 
           <div className="flex space-x-2 ml-4 flex-shrink-0 justify-between">
             <div className="hidden lg:flex space-x-2">
-              <button className="bg-emerald-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-emerald-700 transition-colors">
-                Sign In
-              </button>
-              <button className="border border-gray-300 text-gray-700 px-5 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                Sign up
-              </button>
+              <Button size="large" shape="rounded-full" children="Sign in" className="bg-emerald-600 text-white border-0 hover:text-black"/>
+              <Button size="large" shape="rounded-full" children="Sign up" />
             </div>
             <div className="lg:hidden items-center space-x-2">
               <button className="bg-emerald-100 p-3 rounded-full text-emerald-600 hover:bg-emerald-200 transition-colors">
@@ -184,6 +184,7 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
+       <hr className="border-1 border-gray-50" />
     </header>
   );
 };
