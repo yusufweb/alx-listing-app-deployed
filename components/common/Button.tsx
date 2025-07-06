@@ -27,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({
 
   // Combine base styles with size, shape, and any custom classes
   const combinedClasses = `text-[#222222] font-semibold border border-gray-400
-    hover:bg-emerald-100 hover:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-50
+    hover:bg-emerald-100 hover:cursor-pointer hover:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-50
     transition-colors duration-200
     ${sizeClasses[size]}
     ${shapeClasses[shape]}

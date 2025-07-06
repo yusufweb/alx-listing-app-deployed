@@ -13,7 +13,7 @@ export default () => (
         <Tab>About Host</Tab>
       </TabList>
       <div className="hidden md:hidden lg:block">
-        <p className="text-gray-400">Publish July 01, 2024</p>
+        <p className="text-gray-400 md:text-[14px]">Publish July 01, 2024</p>
       </div>
     </div>
 

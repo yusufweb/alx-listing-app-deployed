@@ -53,15 +53,15 @@ const Card: React.FC<PropertyProps> = ({
       <div className="flex justify-between mt-4 px-2">
         <div className=" grid grid-cols-3 border border-gray-300 w-[132px] rounded-full px-2">
           <div className="flex items-center">
-            <Image src="/assets/icons/bed 1.png" alt="star" width={11} height={11} />
+            <Image src="/assets/icons/beds 1.png" alt="star" width={11} height={11} />
             <p className="ml-1 text-[11px] font-medium">{offers.bed}</p>
           </div>
           <div className="flex items-center">
-            <Image src="/assets/icons/bathtub 1.png" alt="star" width={11} height={11} />
+            <Image src="/assets/icons/bathtubs 1.png" alt="star" width={11} height={11} />
             <p className="ml-1 text-[11px] font-medium">{offers.shower}</p>
           </div>
           <div className="flex items-center">
-            <Image src="/assets/icons/people 1.png" alt="star" width={11} height={11} />
+            <Image src="/assets/icons/peoples 1.png" alt="star" width={11} height={11} />
             <p className="ml-1 text-[11px] font-medium">{offers.occupants}</p>
           </div>
         </div>

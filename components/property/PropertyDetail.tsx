@@ -57,8 +57,8 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
                 <Image
                   src="/assets/icons/Star 2.png"
                   alt="star Image"
-                  width={20}
-                  height={20}
+                  width={15}
+                  height={15}
                 />
                 <p className="text-[10px] lg:text-[15px] md:text-[14px]">
                   {property.rating}{" "}
@@ -69,8 +69,8 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
                 <Image
                   src="/assets/icons/Bold/Map & Location/Map Point.png"
                   alt="star Image"
-                  width={20}
-                  height={20}
+                  width={15}
+                  height={15}
                 />
                 <p className="text-[10px] lg:text-[15px] md:text-[14px] text-gray-400">
                   {property.address.city}, {property.address.state}{" "}
@@ -81,8 +81,8 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
                 <Image
                   src="/assets/icons/profile 1.png"
                   alt="star Image"
-                  width={20}
-                  height={20}
+                  width={15}
+                  height={15}
                 />
                 <p className="text-[10px] lg:text-[15px] md:text-[14px] text-gray-400">
                   Mainstream
@@ -146,11 +146,11 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
         </div>
       </div>
 
-      <div className="my-6 space-x-4 flex-3 px-6 md:px-0 lg:px-0">
+      <div className="my-6 space-x-4 space-y-2 flex-3 px-6 md:px-0 lg:px-0">
         <Button size="small" shape="rounded-full">
           <div className="flex justify-center items-center gap-2">
             <Image
-              src="/assets/icons/bed 1.png"
+              src="/assets/icons/beds 1.png"
               width={15}
               height={15}
               alt="filter"
@@ -161,7 +161,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
         <Button size="small" shape="rounded-full">
           <div className="flex justify-center items-center gap-2">
             <Image
-              src="/assets/icons/bathtub 1.png"
+              src="/assets/icons/bathtubs 1.png"
               width={15}
               height={15}
               alt="filter"
@@ -172,7 +172,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
         <Button size="small" shape="rounded-full">
           <div className="flex justify-center items-center gap-2">
             <Image
-              src="/assets/icons/people 1.png"
+              src="/assets/icons/peoples 1.png"
               width={15}
               height={15}
               alt="filter"
@@ -201,7 +201,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
             <ul className="grid lg:grid-cols-2 gap-1 lg:gap-2 mt-8 space-y-5">
               <li className="flex items-center space-x-4 space-y-4 ">
                 <Image
-                  src="/assets/icons/mountain 1.png"
+                  src="/assets/icons/mountains 1.png"
                   width={30}
                   height={30}
                   alt="filter"
@@ -300,6 +300,14 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
             discount={`${property.discount}`}
           />
         </div>
+      </div>
+
+      <div className="flex justify-between items-center p-4 border-t-1 border-t-gray-100 fixed bottom-0 left-0 w-full bg-white md:hidden lg:hidden">
+        <div className="flex flex-col space-y-2 w-1/3">
+            <p className="text-dark font-bold">${property.price}/ <span className="text-gray-400 font-medium text-[12px]">nights</span></p>
+            <input type="text"  placeholder="Add date"/>
+        </div>
+        <button className="bg-emerald-600 py-4 px-8 rounded-lg text-white font-semibold w-1/2 text-[14px]">Review now</button>
       </div>
     </div>
   );

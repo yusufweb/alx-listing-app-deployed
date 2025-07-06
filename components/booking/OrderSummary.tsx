@@ -1,12 +1,27 @@
-const OrderSummary: React.FC<{ bookingDetails: any }> = ({ bookingDetails }) => (
-  <div className="bg-white p-6 shadow-md rounded-lg">
+import Pill from "../common/Pill";
+import Image from "next/image";
+
+const OrderSummary: React.FC<{ bookingDetails: any }> = ({
+  bookingDetails,
+}) => (
+  <div className="bg-white p-6 shadow-sm rounded-lg h-fit border border-gray-100 order-1 md:order-2 md:col-span-2">
     <h2 className="text-xl font-semibold">Review Order Details</h2>
-    <div className="flex items-center mt-4">
-      <img src="https://example.com/property.jpg" alt="Property" className="w-32 h-32 object-cover rounded-md" />
-      <div className="ml-4">
+    <div className="flex flex-col justify-between mt-4 space-y-3">
+      <img
+        src="/assets/images/Listing/List 3.png"
+        alt="Property"
+        className="w-full object-cover rounded-md"
+      />
+      <div className="space-y-3">
         <h3 className="text-lg font-semibold">{bookingDetails.propertyName}</h3>
-        <p className="text-sm text-gray-500">4.76 (345 reviews)</p>
-        <p className="text-sm text-gray-500">{bookingDetails.startDate} • {bookingDetails.totalNights} Nights</p>
+        <div className="flex space-x-3 items-center">
+          <Image src="/assets/icons/Star 2.png" alt="review" width={20} height={20}/>
+          <p className="text-sm text-gray-500">4.76 (345 reviews)</p>
+        </div>
+        <div className="text-sm text-gray-500 flex space-x-4">
+          <Pill title={bookingDetails.startDate} />
+          <Pill title={`${bookingDetails.totalNights} Nights`} />
+        </div>
       </div>
     </div>
 
@@ -20,7 +35,7 @@ const OrderSummary: React.FC<{ bookingDetails: any }> = ({ bookingDetails }) => 
         <p>Subtotal</p>
         <p>${bookingDetails.price}</p>
       </div>
-      <div className="flex justify-between mt-2 font-semibold">
+      <div className="flex justify-between mt-8 font-semibold">
         <p>Grand Total</p>
         <p>${bookingDetails.bookingFee + bookingDetails.price}</p>
       </div>

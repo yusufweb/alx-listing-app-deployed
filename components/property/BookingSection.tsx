@@ -1,6 +1,8 @@
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const BookingSection: React.FC<{ price: number, discount: string }> = ({ price, discount }) => {
+  const router = useRouter()
   return (
     <div className="bg-white p-7 shadow-lg rounded-lg">
       <h3 className="text-xl font-semibold">
@@ -46,7 +48,7 @@ const BookingSection: React.FC<{ price: number, discount: string }> = ({ price, 
       </div>
 
       {/* Reserve button */}
-      <button className="mt-4 bg-emerald-500 text-white py-3 px-4 rounded-md w-full">
+      <button onClick={() => router.push("/booking")} className="mt-4 bg-emerald-600 text-white py-3 px-4 rounded-md w-full cursor-pointer hover:bg-emerald-500">
         Reserve now
       </button>
     </div>

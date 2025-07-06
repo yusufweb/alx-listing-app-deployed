@@ -367,9 +367,9 @@ export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
 export const ALL_CATEGORIES: string[] = [
   "All",
   "Self Checkin",
-  "Mountains View",
+  "Mountain View",
   "Luxury Villa",
-  "Pool",
+  // "Pool",
   "Fireplace",
   "Desert View",
 //   "Free breakfast",
