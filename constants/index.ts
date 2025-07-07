@@ -378,7 +378,7 @@ export const ALL_CATEGORIES: string[] = [
 ];
 
 export const BACKGROUND_IMAGE = {
-  heroBackgroundDesktop: "/assets/images/Hero/hero-desktop.png",
+  heroBackgroundDesktop: "/assets/images/Hero/hero-desktops.png",
   heroBackgroundMobile: "/assets/images/Hero/hero-mobile.png",
 };
 
