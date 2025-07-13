@@ -47,3 +47,11 @@ export interface FilterButtonsProps {
   onFilterChange: (category: string) => void;
 }
 
+export interface FilterControlsProps {
+  quickCategories: string[]; // Categories for quick access buttons
+  allCategories: string[]; // All possible categories for the dropdown
+  selectedFilters: string[]; // The currently selected filters from the parent
+  onQuickFilterChange: (category: string) => void; // Callback for quick filter clicks
+  onAdvancedFiltersApply: (selectedCategories: string[]) => void; // Callback for advanced filter apply
+}
+

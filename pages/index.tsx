@@ -1,38 +1,52 @@
 import React, { useEffect, useState } from "react";
 import Hero from "@/components/common/Hero";
 import Listing from "@/components/common/Listing";
-import Filter from "@/components/common/Filter";
+// import Filter from "@/components/common/Filter";
 import HorizontalScroll from "@/components/common/HorizontalScroll";
 import {PROPERTYLISTINGSAMPLE} from '@/constants';
 import { PropertyProps } from "@/interfaces";
+import { ALL_CATEGORIES } from "@/constants";
+import FilterControls from "@/components/common/FilterControls";
 
 
 export default function Home() {
+  const [selectedFilters, setSelectedFilters] = useState<string[]>(['All']);
+  const [filteredProperties, setFilteredProperties] = useState<PropertyProps[]>([]);
 
-  const [activeFilter, setActiveFIlter] = useState<string>("All");
-  const [filterProperties, setFilterProperties] = useState<PropertyProps[]>([])
-  
   useEffect(() => {
-    if(activeFilter == 'All') {
-      setFilterProperties(PROPERTYLISTINGSAMPLE)
-    }else {
+    if (selectedFilters.includes('All') || selectedFilters.length === 0) {
+      setFilteredProperties(PROPERTYLISTINGSAMPLE);
+    } else {
       const newFilteredProperties = PROPERTYLISTINGSAMPLE.filter((property) =>
-        property.category.includes(activeFilter)
+        property.category.some((category) => selectedFilters.includes(category))
       );
-      setFilterProperties(newFilteredProperties);
+      setFilteredProperties(newFilteredProperties);
     }
-  },[activeFilter])
+  }, [selectedFilters]);
 
-  const handleFilterChange = (category: string) => {
-    setActiveFIlter(category);
+  const handleQuickFilterChange = (category: string) => {
+    setSelectedFilters([category]);
   };
+
+  const handleAdvancedFiltersApply = (filters: string[]) => {
+    setSelectedFilters(filters);
+  };
+
 
   return (
     <div className="min-h-screen">
       <HorizontalScroll />
       <Hero />
-      <Filter activeFilter={activeFilter} onFilterChange={handleFilterChange}/>
-      <Listing properties={filterProperties}/>
+      <FilterControls
+          quickCategories={ALL_CATEGORIES}
+          allCategories={ALL_CATEGORIES}
+          selectedFilters={selectedFilters}
+          onQuickFilterChange={handleQuickFilterChange}
+          onAdvancedFiltersApply={handleAdvancedFiltersApply}
+        />
+        <Listing
+        properties={filteredProperties}
+      />
     </div>
   );
 }

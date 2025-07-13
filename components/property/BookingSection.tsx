@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import { useRouter } from "next/navigation";
 
 const BookingSection: React.FC<{ price: number, discount: string }> = ({ price, discount }) => {
+  const [checkInDate, setCheckInDate] = useState<string>("")
+  const [checkOutDate, setCheckOutDate] = useState<string>("")
+
+  console.log(new Date(), checkOutDate)
   const router = useRouter()
+
   return (
     <div className="bg-white p-7 shadow-lg rounded-lg">
       <h3 className="text-xl font-semibold">
@@ -15,6 +20,8 @@ const BookingSection: React.FC<{ price: number, discount: string }> = ({ price, 
         <input
           type="date"
           className="border border-gray-300 p-2 w-full mt-2 rounded-md"
+          value={checkInDate}
+          onChange={e => setCheckInDate(e.target.value)}
         />
       </div>
       <div className="mt-4">
@@ -22,6 +29,8 @@ const BookingSection: React.FC<{ price: number, discount: string }> = ({ price, 
         <input
           type="date"
           className="border border-gray-300 p-2 w-full mt-2 rounded-md"
+          value={checkOutDate}
+          onChange={e => setCheckOutDate(e.target.value)}
         />
       </div>
 

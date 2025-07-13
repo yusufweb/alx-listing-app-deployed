@@ -22,7 +22,7 @@ const Card: React.FC<PropertyProps> = ({
   }
 
   return (
-    <div className="h-auto w-full cursor-pointer hover:shadow-md hover:rounded-lg mb-2 pb-4" onClick={handleClick}>
+    <div className="relative h-auto w-full cursor-pointer hover:shadow-md hover:rounded-lg mb-2 pb-4" onClick={handleClick}>
       <Image
         className="rounded-lg w-full object-contain"
         src={`${image}`}
@@ -30,6 +30,11 @@ const Card: React.FC<PropertyProps> = ({
         height={299.37}
         alt="house image"
       />
+      {discount && (
+          <span className="absolute top-3 left-3 bg-emerald-500 text-white text-[14px] font-medium px-4 py-2 rounded-full">
+            {discount}% off
+          </span>
+        )}
       <div className="p-2 flex gap-2 mt-2">
         {category.map((categories) => (
             <Pill title={categories} />

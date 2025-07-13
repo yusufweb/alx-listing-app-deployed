@@ -302,6 +302,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
         </div>
       </div>
 
+    {/* display on small screen */}
       <div className="flex justify-between items-center p-4 border-t-1 border-t-gray-100 fixed bottom-0 left-0 w-full bg-white md:hidden lg:hidden">
         <div className="flex flex-col space-y-2 w-1/3">
             <p className="text-dark font-bold">${property.price}/ <span className="text-gray-400 font-medium text-[12px]">nights</span></p>
