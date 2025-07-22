@@ -294,7 +294,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
 
           <ReviewSection reviews={REVIEWS} />
         </div>
-        <div className="lg:w-1/3 md:w-1/2 relative hidden lg:block md:block">
+        <div className="lg:w-1/3 md:w-1/2 hidden lg:block md:block">
           <BookingSection
             price={property.price}
             discount={`${property.discount}`}

@@ -4,7 +4,7 @@ import Image from "next/image";
 const OrderSummary: React.FC<{ bookingDetails: any }> = ({
   bookingDetails,
 }) => (
-  <div className="bg-white p-6 shadow-sm rounded-lg h-fit border border-gray-100 order-1 md:order-2 md:col-span-2">
+  <div className="bg-white p-6 shadow-sm rounded-lg h-fit border border-gray-100 order-1 md:order-2 md:col-span-2 lg:sticky lg:top-0 lg:z-10">
     <h2 className="text-xl font-semibold">Review Order Details</h2>
     <div className="flex flex-col justify-between mt-4 space-y-3">
       <img
@@ -15,7 +15,12 @@ const OrderSummary: React.FC<{ bookingDetails: any }> = ({
       <div className="space-y-3">
         <h3 className="text-lg font-semibold">{bookingDetails.propertyName}</h3>
         <div className="flex space-x-3 items-center">
-          <Image src="/assets/icons/Star 2.png" alt="review" width={20} height={20}/>
+          <Image
+            src="/assets/icons/Star 2.png"
+            alt="review"
+            width={20}
+            height={20}
+          />
           <p className="text-sm text-gray-500">4.76 (345 reviews)</p>
         </div>
         <div className="text-sm text-gray-500 flex space-x-4">

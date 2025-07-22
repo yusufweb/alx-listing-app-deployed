@@ -33,7 +33,7 @@ export default function BookingPage() {
       </div>
       <div className="container mx-auto">
         <div className="p-5 lg:p-20 md:p-2">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-5 relative">
             <BookingForm />
             <OrderSummary bookingDetails={bookingDetails} />
             <CancellationPolicy />

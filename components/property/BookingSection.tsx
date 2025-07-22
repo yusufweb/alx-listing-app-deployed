@@ -9,7 +9,7 @@ const BookingSection: React.FC<{ price: number, discount: string }> = ({ price, 
   const router = useRouter()
 
   return (
-    <div className="bg-white p-7 shadow-lg rounded-lg">
+    <div className="bg-white p-7 shadow-lg rounded-lg sticky top-0 z-10 border-1 border-emerald-100">
       <h3 className="text-xl font-semibold">
         ${price.toLocaleString()}{" "}
         <span className="text-gray-400 font-light">/night</span>
