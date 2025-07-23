@@ -10,7 +10,7 @@ const HorizontalScrollContainer: React.FC<HorizontalScrollContainerProps> = ({ c
     <div
       className={`
         flex
-        overflow-x-auto         /* Enables horizontal scrolling */
+        overflow-y-auto         /* Enables horizontal scrolling */
         whitespace-nowrap      /* Prevents content from wrapping to the next line */
         scrollbar-hide         /* Custom utility to hide scrollbar (from globals.css) */
         scroll-smooth          /* Makes scrolling smooth when programmatically triggered (e.g., by arrow buttons) */

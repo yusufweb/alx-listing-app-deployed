@@ -2,6 +2,7 @@ import { FilterControlsProps } from "@/interfaces";
 import React, { useState, useRef, useEffect } from "react";
 import Button from "./Button";
 import Image from "next/image";
+import { ALL_CATEGORIES } from "@/constants";
 
 const FilterControls: React.FC<FilterControlsProps> = ({
   quickCategories,
@@ -70,9 +71,9 @@ const FilterControls: React.FC<FilterControlsProps> = ({
     selectedFilters.length === 1 ? selectedFilters[0] : "";
 
   return (
-    <div className="flex justify-between gap-4 px-8 bg-white rounded-lg mt-8">
+    <div className="flex justify-between gap-4 px-8 bg-white rounded-lg mt-8 overflow-x-auto scrollbar-hide w-full relative z-100">
       {/* Quick Filter Buttons */}
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex items-center justify-between gap-2 md:hidden lg:flex order-2 lg:order-none">
         {allCategories.map((category) => (
           <Button
             key={category}
@@ -94,27 +95,78 @@ const FilterControls: React.FC<FilterControlsProps> = ({
           </Button>
         ))}
       </div>
-      {/* Advanced Filter Dropdown Button */}
-      <div className="flex items-center justify-between gap-4">
-        <div className="relative inline-block text-left" ref={dropdownRef}>
-          <Button size="medium" shape="rounded-full" id="advanced-filter-button"
-              aria-expanded={isOpen}
-              aria-haspopup="true"
-              onClick={() => setIsOpen(!isOpen)}>
-          <div className="flex justify-center items-center gap-4">
-            <p>Filter</p>
-            <Image
-              src="/assets/icons/Linear/Essentional, UI/Filter.png"
-              width={20}
-              height={20}
-              alt="filter"
-            />
-          </div>
+      {/* Medium screen - Tabs */}
+      <div className="hidden items-center justify-between gap-2 lg:hidden md:flex">
+        <Button
+          onClick={() => onQuickFilterChange(ALL_CATEGORIES[0])}
+          size="medium"
+          shape="rounded-full"
+          className={`
+            transition-all duration-200 ease-in-out
+            border border-gray-300
+            focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2
+          `}
+        >
+          {ALL_CATEGORIES[0]}
         </Button>
+        <Button
+          onClick={() => onQuickFilterChange(ALL_CATEGORIES[1])}
+          size="medium"
+          shape="rounded-full"
+          className={`
+            transition-all duration-200 ease-in-out
+            border border-gray-300
+            focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2
+          `}
+        >
+          {ALL_CATEGORIES[1]}
+        </Button>
+        <Button
+          onClick={() => onQuickFilterChange(ALL_CATEGORIES[4])}
+          size="medium"
+          shape="rounded-full"
+          className={`
+            transition-all duration-200 ease-in-out
+            border border-gray-300
+            focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-offset-2
+          `}
+        >
+          {ALL_CATEGORIES[4]}
+        </Button>
+      </div>
+      {/* Advanced Filter Dropdown Button */}
+      <div className="flex items-center justify-between gap-4 order-1 lg:order-none">
+        <div className="relative inline-block" ref={dropdownRef}>
+          <Button
+            size="medium"
+            shape="rounded-full"
+            id="advanced-filter-button"
+            aria-expanded={isOpen}
+            aria-haspopup="true"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <div className="hidden justify-center items-center gap-4 lg:flex md:flex">
+              <p className="block">Filter</p>
+              <Image
+                src="/assets/icons/Linear/Essentional, UI/Filter.png"
+                width={20}
+                height={20}
+                alt="filter"
+              />
+            </div>
+            <div className="flex justify-center items-center gap-4 lg:hidden md:hidden">
+              <Image
+                src="/assets/icons/Linear/Essentional, UI/Filter.png"
+                width={20}
+                height={20}
+                alt="filter"
+              />
+            </div>
+          </Button>
 
           {isOpen && (
             <div
-              className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-emerald-300 ring-opacity-5 focus:outline-none"
+              className="absolute lg:right-0 left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-emerald-300 ring-opacity-5 focus:outline-none"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="advanced-filter-button"
@@ -160,7 +212,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
                       </label>
                     </div>
                   ))}
-                <div className="border-t border-gray-200 mt-2 pt-2 px-4">
+                <div className="border-t border-gray-200 mt-2 mb-2 pt-2 px-4">
                   <button
                     onClick={handleApplyClick}
                     className="w-full rounded-md bg-emerald-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
@@ -172,7 +224,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
             </div>
           )}
         </div>
-         <Button size="medium" shape="rounded-full">
+        <Button size="medium" shape="rounded-full" className="hidden lg:block md:block">
           <div className="flex justify-center items-center gap-4">
             <p>Sort by:</p>
             <p className="text-gray-400">Highest Price</p>

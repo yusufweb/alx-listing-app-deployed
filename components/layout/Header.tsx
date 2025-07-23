@@ -160,8 +160,8 @@ const Header: React.FC = () => {
 
           <div className="flex space-x-2 ml-4 flex-shrink-0 justify-between">
             <div className="hidden lg:flex space-x-2">
-              <Button size="medium" shape="rounded-full" children="Sign in" className="bg-emerald-600 text-white border-0 hover:text-black"/>
-              <Button size="medium" shape="rounded-full" children="Sign up" />
+              <Button size="large" shape="rounded-full" children="Sign in" className="bg-emerald-600 text-white border-0 hover:text-black"/>
+              <Button size="large" shape="rounded-full" children="Sign up" />
             </div>
             <div className="lg:hidden items-center space-x-2">
               <button className="bg-emerald-100 p-3 rounded-full text-emerald-600 hover:bg-emerald-200 transition-colors">
