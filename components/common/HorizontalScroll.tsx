@@ -4,7 +4,7 @@ import Scrollable from './Scrollable';
 
 const HorizontalScroll: React.FC = () => {
     return (
-        <div className="relative w-full overflow-hidden mb-4">
+        <div className="relative w-full overflow-hidden lg:mb-4 md:mb-4 mb-1 lg:order-none md:order-none order-1">
         <Scrollable>
           <Image
             src="/assets/logos/apartment 1.png"

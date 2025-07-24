@@ -71,9 +71,10 @@ const FilterControls: React.FC<FilterControlsProps> = ({
     selectedFilters.length === 1 ? selectedFilters[0] : "";
 
   return (
-    <div className="flex justify-between gap-4 px-8 bg-white rounded-lg mt-8 overflow-x-auto scrollbar-hide w-full relative z-100">
+    <div className="flex justify-between gap-4 px-3 lg:px-8 md:px-8 bg-white rounded-lg mt-4 mb-4 lg:mt-8 md:mt-8 lg:order-none md:order-none order-2">
       {/* Quick Filter Buttons */}
-      <div className="flex items-center justify-between gap-2 md:hidden lg:flex order-2 lg:order-none">
+      <div className="items-center justify-between gap-2 md:hidden lg:flex order-2 lg:order-none hidden
+      ">
         {allCategories.map((category) => (
           <Button
             key={category}
@@ -135,7 +136,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
         </Button>
       </div>
       {/* Advanced Filter Dropdown Button */}
-      <div className="flex items-center justify-between gap-4 order-1 lg:order-none">
+      <div className="flex items-center justify-between gap-4 order-1 lg:order-none w-fit">
         <div className="relative inline-block" ref={dropdownRef}>
           <Button
             size="medium"
@@ -224,7 +225,7 @@ const FilterControls: React.FC<FilterControlsProps> = ({
             </div>
           )}
         </div>
-        <Button size="medium" shape="rounded-full" className="hidden lg:block md:block">
+        <Button size="medium" shape="rounded-full" className="lg:block md:block hidden">
           <div className="flex justify-center items-center gap-4">
             <p>Sort by:</p>
             <p className="text-gray-400">Highest Price</p>

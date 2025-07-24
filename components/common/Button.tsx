@@ -14,7 +14,7 @@ const Button: React.FC<ButtonProps> = ({
   // Define Tailwind classes based on size prop
   const sizeClasses: Record<ButtonSize, string> = {
     small: 'px-3 py-1.5 text-sm',
-    medium: 'px-4 py-2 text-[13.5px] lg:text-[10.5px] xl:text-[13.5px]',
+    medium: 'px-4 py-2 text-[8px] md:text-[10.5px] lg:text-[10.5px] xl:text-[13.5px] w-[100px] lg:w-auto md:w-auto',
     large: 'px-7 py-3 text-lg',
   };
 

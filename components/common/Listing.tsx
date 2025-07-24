@@ -7,7 +7,7 @@ interface PropertyListingsProps {
 }
 
 const Listing: React.FC<PropertyListingsProps> = ({ properties }) => (
-  <section className="p-8 grid lg:grid-cols-4 md:grid-cols-2 gap-6 ">
+  <section className="p-8 grid lg:grid-cols-4 md:grid-cols-2 gap-6 lg:order-none md:order-none order-4">
     {properties.map((list) => (
       <Card
         key={list.name}
