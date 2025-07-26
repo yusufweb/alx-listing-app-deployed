@@ -11,6 +11,8 @@ const OrderSummary: React.FC<{bookingDetails: OrderSummaryProps }> = ({
       <Image
         src="/assets/images/Listing/List 3.png"
         alt="Property"
+        width={500}
+        height={500}
         className="w-full object-cover rounded-md"
       />
       <div className="space-y-3">

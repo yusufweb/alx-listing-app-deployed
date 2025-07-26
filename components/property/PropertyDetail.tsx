@@ -122,6 +122,8 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
             <Image
               src={property.image}
               alt={property.name}
+              width={500}
+              height={500}
               className="w-full h-100 object-cover lg:rounded-tl-[20px] md:rounded-tl-[20px] lg:rounded-bl-[20px] md:rounded-bl-[20px] rounded-none"
             />
           </div>
@@ -129,17 +131,23 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
             <Image
               src={property.image}
               alt={property.name}
+              width={500}
+              height={500}
               className="w-full h-50 object-cover lg:rounded-tr-[20px] md:rounded-tr-[20px] col-span-2"
             />
 
             <Image
               src={property.image}
               alt={property.name}
+              width={500}
+              height={500}
               className="w-full h-48 object-cover lg:rounded-0 md:rounded-0 col-span-1"
             />
             <Image
               src={property.image}
               alt={property.name}
+              width={500}
+              height={500}
               className="w-full h-48 object-cover lg:rounded-br-[20px] md:rounded-br-[20px] col-span-1"
             />
           </div>
