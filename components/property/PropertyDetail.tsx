@@ -128,7 +128,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
               alt={property.name}
               width={500}
               height={500}
-              className="w-full h-100 object-cover lg:rounded-tl-[20px] md:rounded-tl-[20px] lg:rounded-bl-[20px] md:rounded-bl-[20px] rounded-none"
+              className="w-full h-100 lg:object-cover md:object-cover object-fill lg:rounded-tl-[20px] md:rounded-tl-[20px] lg:rounded-bl-[20px] md:rounded-bl-[20px] rounded-none"
             />
           </div>
           <div className="lg:grid md:grid grid-cols-2 gap-2 hidden">
