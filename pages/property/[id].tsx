@@ -2,7 +2,6 @@ import React from "react";
 import { PROPERTYLISTINGSAMPLE } from "@/constants";
 import { useRouter } from "next/router";
 import PropertyDetail from "@/components/property/PropertyDetail";
-import {PropertyProps} from '@/interfaces'
 
 const PropertyPage: React.FC = () => {
   const router = useRouter();

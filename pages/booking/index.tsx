@@ -3,8 +3,15 @@ import CancellationPolicy from "@/components/booking/CancellationPolicy";
 import OrderSummary from "@/components/booking/OrderSummary";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+
+import { PROPERTYLISTINGSAMPLE } from "@/constants";
 
 export default function BookingPage() {
+  const [checkInDate, setCheckInDate] = useState();
+  const [checkOutDate, setCheckOutDate] = useState();
+  const [totalAmount, setTotalAmount] = useState()  
+  
   const router = useRouter();
 
   const bookingDetails = {
@@ -20,7 +27,7 @@ export default function BookingPage() {
       <div className="bg-gray-100 p-6">
         <div
           className="flex items-center gap-4 container mx-auto lg:md:px-20 cursor-pointer"
-          onClick={() => router.push("/")}
+          onClick={() => router.back()}
         >
           <Image
             src="/assets/icons/Linear/Arrows/Arrow Left.png"

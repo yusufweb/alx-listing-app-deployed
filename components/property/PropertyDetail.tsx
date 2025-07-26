@@ -12,7 +12,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
   property,
 }) => {
   return (
-    <div className="lg:p-10 md:p-10 relative">
+    <div className="lg:p-10 md:p-10 lg:pt-2 md:pt-2 relative">
       <div className="flex flex-col">
         <div className="flex justify-between items-center px-6 pt-6 lg:hidden md:hidden">
           <Link href="/">
@@ -296,8 +296,7 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
         </div>
         <div className="lg:w-1/3 md:w-1/2 hidden lg:block md:block">
           <BookingSection
-            price={property.price}
-            discount={`${property.discount}`}
+            property= {property}
           />
         </div>
       </div>
