@@ -5,7 +5,6 @@ import Image from "next/image";
 import { ALL_CATEGORIES } from "@/constants";
 
 const FilterControls: React.FC<FilterControlsProps> = ({
-  quickCategories,
   allCategories,
   selectedFilters,
   onQuickFilterChange,

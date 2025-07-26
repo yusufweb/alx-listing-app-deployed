@@ -1,4 +1,4 @@
-import { PropertyProps } from "../interfaces/index";
+import { PropertyProps, OrderSummaryProps } from "../interfaces/index";
 import { ReviewsProps } from "../interfaces/index";
 // constant declaration - (Airbnb listing data)
 export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
@@ -408,4 +408,12 @@ export const REVIEWS: ReviewsProps[] = [
     review: "We had an incredible dining experience here. The staff was attentive, and the service was top-notch! The highlight was the cozy couches on the side where we could lounge and dine with our families! Worth a visit!"
   }
 ]
+
+  export const bookingDetails: OrderSummaryProps = {
+    propertyName: "Villa Arrecife Beach House",
+    price: 7500,
+    bookingFee: 65,
+    totalNights: 3,
+    startDate: "24 August 2024",
+  };
 

@@ -55,19 +55,11 @@ export interface FilterControlsProps {
   onAdvancedFiltersApply: (selectedCategories: string[]) => void; // Callback for advanced filter apply
 }
 
-export interface ReviewOrderProps {
-  property: PropertyProps;
-  startDate: Date;
-  endDate: Date;
-  nights: number;
-  totalAmount: number;
-}
 
 export interface OrderSummaryProps {
-  property: PropertyProps;
-  startDate: Date; // <-- This is what OrderSummary expects
-  endDate: Date;   // <-- This is what OrderSummary expects
-  nights: number;
-  totalAmount: number;
+  propertyName: string;
+  price: number;
   bookingFee: number;
+  totalNights: number;
+  startDate: string;
 }

@@ -3,7 +3,9 @@ import "react-tabs/style/react-tabs.css";
 import ReviewSection from "../property/ReviewSection";
 import { REVIEWS } from "@/constants";
 
-export default () => (
+// --- FIX START ---
+// Assign the arrow function to a named constant
+const PropertyTabsComponent = () => (
   <Tabs>
     <div className="flex justify-between items-center border-t-1 border-b-1 border-gray-200 pt-8 w-full">
       <TabList className="border-0 text-gray-400 text-[12.75px] lg:text-[15px]">
@@ -20,11 +22,11 @@ export default () => (
     <TabPanel className="my-10">
       <p className="text-[17px]/7">
         Feel like exploring the Dominican? Start the day with a hike on one of
-        Playa Moron's many trails. Weave your way around the gated community to
-        find secluded sandy coves for swimming and paddleboarding. When you're
-        ready to chill with friends, the beach house pool awaits. Spend the
-        night entertaining in the outdoor lounge, sipping drinks in the hot tub,
-        and gazing out over incredible ocean views.
+        Playa Moron&apos;s many trails. Weave your way around the gated
+        community to find secluded sandy coves for swimming and paddleboarding.
+        When you&apos;re ready to chill with friends, the beach house pool
+        awaits. Spend the night entertaining in the outdoor lounge, sipping
+        drinks in the hot tub, and gazing out over incredible ocean views.
       </p>
 
       <div className="font-semibold text-lg text-gray-800 mt-8">The space</div>
@@ -55,14 +57,13 @@ export default () => (
       <ReviewSection reviews={REVIEWS} />
     </TabPanel>
     <TabPanel>
+      <h3 className="text-xl font-semibold mb-3">About Your Host</h3>
       <p>
-        Feel like exploring the Dominican? Start the day with a hike on one of
-        Playa Moron's many trails. Weave your way around the gated community to
-        find secluded sandy coves for swimming and paddleboarding. When you're
-        ready to chill with friends, the beach house pool awaits. Spend the
-        night entertaining in the outdoor lounge, sipping drinks in the hot tub,
-        and gazing out over incredible ocean views.
+        Your host is dedicated to ensuring you have a comfortable and memorable stay.
+        They are available to assist with any questions or needs you may have during your visit.
       </p>
     </TabPanel>
   </Tabs>
 );
+
+export default PropertyTabsComponent;

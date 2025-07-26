@@ -41,29 +41,9 @@ const BookingSection: React.FC<{ property: PropertyProps }> = ({
 
   useEffect(() => {
     calculatePerNight();
-  }, [checkInDate, checkOutDate]);
+  });
 
   const handleReservation = () => {
-    // router.push({
-    //   pathname: "/booking",
-    //   query: {
-    //     propertyId: property.name,
-    //     checkInDate: checkInDate,
-    //     checkOutDate: checkOutDate,
-    //     totalAmount:
-    //       Number(property.price) * perNight -
-    //       (isNaN(Number(property.discount)) ? 0 : Number(property.discount)) +
-    //       33,
-    //   },
-    // });
-
-    console.log('BookingSection: Preparing to push to /booking with query:', {
-      propertyId: property.name,
-      checkInDate: checkInDate.toString(), // <-- CHANGED THIS KEY
-      checkOutDate: checkOutDate.toString(),   // <-- CHANGED THIS KEY
-      nights: perNight.toString(),
-    });
-
     router.push({
       pathname: "/booking",
       query: {

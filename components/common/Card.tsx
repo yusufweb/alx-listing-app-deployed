@@ -36,8 +36,8 @@ const Card: React.FC<PropertyProps> = ({
           </span>
         )}
       <div className="p-2 flex gap-2 mt-2">
-        {category.map((categories) => (
-            <Pill title={categories} />
+        {category.map((categories, index) => (
+            <Pill title={categories} key={index}/>
         ))}
       </div>
       <div className="flex items-center justify-between px-2">

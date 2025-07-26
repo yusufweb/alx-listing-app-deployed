@@ -1,14 +1,14 @@
 import Pill from "../common/Pill";
 import Image from "next/image";
-import { PropertyProps, OrderSummaryProps } from "@/interfaces"; 
+import {OrderSummaryProps} from "@/interfaces"
 
-const OrderSummary: React.FC<{ bookingDetails: any }> = ({
-  bookingDetails
+const OrderSummary: React.FC<{bookingDetails: OrderSummaryProps }> = ({
+  bookingDetails 
 }) => (
   <div className="bg-white p-6 shadow-sm rounded-lg h-fit border border-gray-100 order-1 md:order-2 md:col-span-2 lg:sticky lg:top-0 lg:z-10">
     <h2 className="text-xl font-semibold">Review Order Details</h2>
     <div className="flex flex-col justify-between mt-4 space-y-3">
-      <img
+      <Image
         src="/assets/images/Listing/List 3.png"
         alt="Property"
         className="w-full object-cover rounded-md"

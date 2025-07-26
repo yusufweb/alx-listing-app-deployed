@@ -119,25 +119,25 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
         {/* Image Grid */}
         <div className="lg:grid md:grid grid-cols-2 gap-2 mt-6 order-1 lg:order-0 md:order-0">
           <div>
-            <img
+            <Image
               src={property.image}
               alt={property.name}
               className="w-full h-100 object-cover lg:rounded-tl-[20px] md:rounded-tl-[20px] lg:rounded-bl-[20px] md:rounded-bl-[20px] rounded-none"
             />
           </div>
           <div className="lg:grid md:grid grid-cols-2 gap-2 hidden">
-            <img
+            <Image
               src={property.image}
               alt={property.name}
               className="w-full h-50 object-cover lg:rounded-tr-[20px] md:rounded-tr-[20px] col-span-2"
             />
 
-            <img
+            <Image
               src={property.image}
               alt={property.name}
               className="w-full h-48 object-cover lg:rounded-0 md:rounded-0 col-span-1"
             />
-            <img
+            <Image
               src={property.image}
               alt={property.name}
               className="w-full h-48 object-cover lg:rounded-br-[20px] md:rounded-br-[20px] col-span-1"

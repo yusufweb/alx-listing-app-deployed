@@ -3,24 +3,11 @@ import CancellationPolicy from "@/components/booking/CancellationPolicy";
 import OrderSummary from "@/components/booking/OrderSummary";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
-
-import { PROPERTYLISTINGSAMPLE } from "@/constants";
+import {bookingDetails} from "@/constants"
 
 export default function BookingPage() {
-  const [checkInDate, setCheckInDate] = useState();
-  const [checkOutDate, setCheckOutDate] = useState();
-  const [totalAmount, setTotalAmount] = useState()  
   
   const router = useRouter();
-
-  const bookingDetails = {
-    propertyName: "Villa Arrecife Beach House",
-    price: 7500,
-    bookingFee: 65,
-    totalNights: 3,
-    startDate: "24 August 2024",
-  };
 
   return (
     <>
