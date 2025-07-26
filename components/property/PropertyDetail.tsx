@@ -7,10 +7,13 @@ import ReviewSection from "./ReviewSection";
 import { REVIEWS } from "@/constants";
 import Tabs from "../common/Tabs";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
   property,
 }) => {
+
+  const router = useRouter()
   return (
     <div className="lg:p-10 md:p-10 lg:pt-2 md:pt-2 relative">
       <div className="flex flex-col">
@@ -309,13 +312,13 @@ const PropertyDetail: React.FC<{ property: PropertyProps }> = ({
         </div>
       </div>
 
-    {/* display on small screen */}
+    {/* display on Mobile screen */}
       <div className="flex justify-between items-center p-4 border-t-1 border-t-gray-100 fixed bottom-0 left-0 w-full bg-white md:hidden lg:hidden">
         <div className="flex flex-col space-y-2 w-1/3">
             <p className="text-dark font-bold">${property.price}/ <span className="text-gray-400 font-medium text-[12px]">nights</span></p>
             <input type="text"  placeholder="Add date"/>
         </div>
-        <button className="bg-emerald-600 py-4 px-8 rounded-lg text-white font-semibold w-1/2 text-[14px]">Review now</button>
+        <button onClick={() => {router.push("/booking")}} className="bg-emerald-600 py-4 px-8 rounded-lg text-white font-semibold w-1/2 text-[14px]">Review now</button>
       </div>
     </div>
   );
