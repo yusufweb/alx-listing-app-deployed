@@ -45,9 +45,9 @@ const Header: React.FC = () => {
           >
             <div
               className="flex-shrink-0
-            flex items-center bg-white-100 rounded-full py-1 pr-2 pl-8 space-x-2 w-auto
+            flex items-center bg-white-100 rounded-full py-1 pr-2 pl-3 md:pl-8 lg:pl-8 space-x-2 w-auto
             md:hidden
-            border-gray-300 border"
+             border border-gray-400"
             >
               <div className="flex-1 text-gray-500 ml-2 text-sm">
                 <h2 className="text-lg font-semibold text-gray-800 mb-4 md:hidden">
@@ -95,7 +95,7 @@ const Header: React.FC = () => {
 
             <form
               className="
-            hidden md:flex md:items-center md:bg-white-100 md:rounded-full md:py-4 md:px-4 md:space-x-4
+            hidden md:flex md:items-center md:bg-white-100 md:rounded-full md:py-4 md:px-2 md:space-x-4
             md:w-full lg:w-auto border border-gray-300
             "
             >
